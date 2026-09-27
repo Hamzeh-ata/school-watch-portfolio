@@ -23,6 +23,9 @@ export class Landing implements OnInit {
 
   protected readonly currentLang = signal('en');
 
+  protected readonly phoneHref = 'tel:+962798354093';
+  protected readonly phoneDisplay = '+962 798 354 093';
+
   protected readonly navLinks: NavLink[] = [
     { href: '#portals', labelKey: 'nav.portals' },
     { href: '#capabilities', labelKey: 'nav.capabilities' },

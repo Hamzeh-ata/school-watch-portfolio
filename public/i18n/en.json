@@ -167,9 +167,11 @@
     "title": "Your school day should feel connected.",
     "subtitle": "Secure login for parents, teachers and school staff — in English or Arabic.",
     "primary": "Enter School Watch",
-    "secondary": "Book a walkthrough"
+    "secondary": "Book a walkthrough",
+    "phoneLabel": "Call us"
   },
   "footer": {
-    "tagline": "One connected experience for the whole school community."
+    "tagline": "One connected experience for the whole school community.",
+    "phone": "+962 798 354 093"
   }
 }

@@ -1,0 +1,233 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-strong: var(--primary-strong);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-ink: var(--ink);
+  --color-copy: var(--copy);
+  --color-soft: var(--soft-surface);
+  --color-parent: var(--role-parent);
+  --color-teacher: var(--role-teacher);
+  --color-student: var(--role-student);
+  --color-ui-border: var(--ui-border);
+  --color-ui-page: var(--ui-page);
+  --color-ui-surface: var(--ui-surface);
+  --color-ui-surface-soft: var(--ui-surface-soft);
+  --color-ui-muted: var(--ui-muted);
+  --color-ui-primary: var(--ui-primary);
+  --color-ui-primary-dark: var(--ui-primary-dark);
+  --color-ui-success: var(--ui-success);
+  --color-ui-warning: var(--ui-warning);
+  --color-ui-danger: var(--ui-danger);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+:root {
+  --radius: 1rem;
+  --background: oklch(100% 0 0);
+  --foreground: oklch(18.89% 0.0369 264.09);
+  --ink: oklch(18.89% 0.0369 264.09);
+  --copy: oklch(48.98% 0.0409 260.28);
+  --card: oklch(100% 0 0);
+  --primary: oklch(53.67% 0.2286 262.17);
+  --primary-strong: oklch(45.41% 0.2115 263.05);
+  --primary-foreground: oklch(100% 0 0);
+  --muted: oklch(98.16% 0.0086 264.52);
+  --muted-foreground: oklch(62.06% 0.0334 260.67);
+  --border: oklch(92.88% 0.0126 255.51);
+  --soft-surface: oklch(98.16% 0.0086 264.52);
+  --hero-wash-top: oklch(98.43% 0.0074 260.73);
+  --preview-navy: oklch(34.8% 0.1298 261.63);
+  --preview-navy-deep: oklch(26.02% 0.0927 263.02);
+  --role-parent: oklch(53.64% 0.1999 262.12);
+  --role-teacher: oklch(53.01% 0.2059 292.91);
+  --role-student: oklch(58.28% 0.1125 168.62);
+  --ui-border: oklch(92.88% 0.0126 255.51);
+  --ui-page: oklch(96.83% 0.0069 247.9);
+  --ui-surface: oklch(100% 0 0);
+  --ui-surface-soft: oklch(98.42% 0.0034 247.86);
+  --ui-muted: oklch(55.44% 0.0407 257.42);
+  --ui-primary: oklch(64.6% 0.1423 253.92);
+  --ui-primary-dark: oklch(34.62% 0.0736 256.04);
+  --ui-success: oklch(72.27% 0.192 149.58);
+  --ui-warning: oklch(70.49% 0.1867 47.6);
+  --ui-danger: oklch(63.68% 0.2078 25.33);
+  --gradient-cta: linear-gradient(120deg, oklch(30.51% 0.1136 261.68), oklch(39.52% 0.1498 261.72) 52%, oklch(50.09% 0.2091 264.35));
+  --gradient-hero-wash: linear-gradient(180deg, var(--hero-wash-top) 0%, oklch(100% 0 0) 70%);
+  --gradient-highlight: linear-gradient(90deg, oklch(53.67% 0.2286 262.17), oklch(60.74% 0.197 272.64), oklch(62.11% 0.2104 298.72));
+  --gradient-sidebar: linear-gradient(180deg, var(--preview-navy), var(--preview-navy-deep));
+  --shadow-lift: 0 18px 40px -22px oklch(18.89% 0.0369 264.09 / 0.35);
+  --shadow-preview: 0 40px 90px -40px oklch(30.51% 0.1136 261.68 / 0.45);
+  --shadow-soft: 0 1px 3px oklch(0% 0 0 / 0.07), 0 6px 16px oklch(0% 0 0 / 0.05);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    color: var(--foreground);
+    background: var(--background);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer utilities {
+  .bg-soft {
+    background-color: var(--soft-surface);
+  }
+
+  .text-ink {
+    color: var(--ink);
+  }
+
+  .text-copy {
+    color: var(--copy);
+  }
+
+  .text-parent {
+    color: var(--role-parent);
+  }
+
+  .text-teacher {
+    color: var(--role-teacher);
+  }
+
+  .text-student {
+    color: var(--role-student);
+  }
+
+  .bg-parent {
+    background-color: var(--role-parent);
+  }
+
+  .bg-teacher {
+    background-color: var(--role-teacher);
+  }
+
+  .bg-student {
+    background-color: var(--role-student);
+  }
+
+  .hover\:border-parent\/40:hover {
+    border-color: color-mix(in oklab, var(--role-parent) 40%, transparent);
+  }
+
+  .hover\:border-teacher\/40:hover {
+    border-color: color-mix(in oklab, var(--role-teacher) 40%, transparent);
+  }
+
+  .hover\:border-student\/40:hover {
+    border-color: color-mix(in oklab, var(--role-student) 40%, transparent);
+  }
+
+  .hover\:border-primary\/40:hover {
+    border-color: color-mix(in oklab, var(--primary) 40%, transparent);
+  }
+
+  .surface-card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .lift-on-hover {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .lift-on-hover:hover {
+    box-shadow: var(--shadow-lift);
+    transform: translateY(-6px);
+  }
+
+  .hero-wash {
+    background-image: var(--gradient-hero-wash);
+  }
+
+  .grid-glow {
+    background-image:
+      radial-gradient(60% 55% at 50% 0px, oklch(0.5367 0.2286 262.17 / 0.13), transparent 70%),
+      linear-gradient(oklch(0.5367 0.2286 262.17 / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.5367 0.2286 262.17 / 0.06) 1px, transparent 1px);
+    background-size:
+      100% 100%,
+      64px 64px,
+      64px 64px;
+  }
+
+  .text-highlight {
+    background-image: var(--gradient-highlight);
+    color: transparent;
+    background-clip: text;
+  }
+
+  .cta-banner {
+    background-image: var(--gradient-cta);
+  }
+
+  .sidebar-navy {
+    background-image: var(--gradient-sidebar);
+  }
+
+  .float-slow {
+    animation: sw-float 9s ease-in-out infinite;
+  }
+
+  .reveal-up {
+    animation: sw-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes sw-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sw-reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
